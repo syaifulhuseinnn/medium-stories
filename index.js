@@ -1,11 +1,13 @@
 const { App } = require('deta');
 const express = require('express');
 const got = require("got");
+const cors = require("cors");
 
 const app = App(express());
 
+app.options("/posts/:username", cors());
 app.disable('etag');
-app.get('/posts/:username', async(req, res) => {
+app.get("/posts/:username", cors(), async(req, res) => {
     const posts = await getPostsMedium(req.params.username);
 	res.send(posts);
 });
