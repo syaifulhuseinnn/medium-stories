@@ -2,25 +2,24 @@ const { App } = require('deta');
 const express = require('express');
 const got = require("got");
 const cors = require("cors");
+const Feed = require("rss-in-json");
 
 const app = App(express());
 
-app.options("/posts/:username", cors());
+app.options("/stories/:username", cors());
 app.disable('etag');
-app.get("/posts/:username", cors(), async(req, res) => {
-    const posts = await getPostsMedium(req.params.username);
-	res.send(posts);
+app.get("/stories/:username", cors(), async(req, res) => {
+    const stories = await getPostsMedium(req.params.username);
+	res.send(stories);
 });
 
 async function getPostsMedium(username) {
-	try {
-		const rss_url = await got(`https://feed2json.org/convert?url=https://medium.com/feed/${username}`);
-		return (JSON.parse(rss_url.body));
-	}
-	catch(rss_url) {
-		return 404;
-	}
+	let stories = {};
+	await Feed.convert(`https://medium.com/feed/${username}`)
+		.then(json => stories = json)
+		.catch(err => console.log(err));
 
+	return stories;
 }
 
 module.exports = app;

@@ -4,7 +4,7 @@ Medium does not provide API for getting stories per user. If you are looking for
 ## How to use
 Fetching the data from this URL. Use **username** as parameter in the end of URL.
 
-    https://ufz7tp.deta.dev/posts/@username
+    https://ufz7tp.deta.dev/stories/@username
  Example:
 
-    https://ufz7tp.deta.dev/posts/@syaifulhuseinnn
+    https://ufz7tp.deta.dev/stories/@syaifulhuseinnn
