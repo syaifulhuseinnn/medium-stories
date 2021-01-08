@@ -12,9 +12,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "got": "^11.8.1",
-    "node-expat": "^2.3.18",
-    "rss-in-json": "^1.0.0",
-    "rss-to-json": "^1.1.2"
+    "rss-in-json": "^1.0.0"
   }
 }

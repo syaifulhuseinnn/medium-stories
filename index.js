@@ -1,6 +1,5 @@
 const { App } = require('deta');
 const express = require('express');
-const got = require("got");
 const cors = require("cors");
 const Feed = require("rss-in-json");
 
