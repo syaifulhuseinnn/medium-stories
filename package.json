@@ -1,0 +1,18 @@
+{
+  "name": "medium_api",
+  "version": "1.0.0",
+  "description": "REST API for getting posts Medium per user",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "syaifulhuseinnn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "got": "^11.8.1",
+    "node-expat": "^2.3.18",
+    "rss-to-json": "^1.1.2"
+  }
+}
